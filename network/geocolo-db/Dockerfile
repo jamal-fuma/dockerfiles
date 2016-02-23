@@ -1,4 +1,4 @@
-FROM tonnerre/ancientsolutions-base:latest
+FROM debian:stretch
 MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
 RUN apt-get update
