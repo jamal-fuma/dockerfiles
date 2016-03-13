@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:unstable
 MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
 # Tell apt to keep to itself.
