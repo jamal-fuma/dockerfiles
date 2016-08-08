@@ -1,7 +1,7 @@
 FROM tonnerre/ancientsolutions-base:testing
 MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
-RUN curl -k -m 30 https://download.owncloud.org/download/repositories/9.0/Debian_8.0/Release.key | apt-key add -
+RUN curl -k -m 30 https://download.owncloud.org/download/repositories/9.1/Debian_8.0/Release.key | apt-key add -
 
 COPY sources.list /etc/apt/sources.list.d/owncloud.list
 
