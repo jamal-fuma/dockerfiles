@@ -1,12 +1,12 @@
-FROM tonnerre/ancientsolutions-base:testing
-MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
+FROM golang:alpine
+LABEL maintainer Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
 COPY run-quasselcore.sh /usr/bin/run-quasselcore.sh
 
-RUN apt-get update
-RUN apt-get -q -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold --purge install quassel-core libqt5sql5-psql etcd
+RUN apk --update add git quassel-core qt-postgresql
+RUN go get github.com/AcalephStorage/kviator
 
-USER quasselcore
+USER quassel
 EXPOSE 4242/tcp
 VOLUME ["/secret", "/var/log/quassel", "/var/lib/quassel"]
 ENTRYPOINT ["/bin/sh", "/usr/bin/run-quasselcore.sh"]
