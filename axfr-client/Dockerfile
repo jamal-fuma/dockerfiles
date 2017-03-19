@@ -1,6 +1,7 @@
-FROM tonnerre/ancientsolutions-base:latest
-MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
+FROM debian:stable
+LABEL maintainer Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
+RUN apt-get -q -y update
 RUN apt-get -q -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold --purge install git libfile-slurp-perl libnet-dns-perl perl perl-base
 
 RUN /usr/bin/git clone https://github.com/tonnerre/dnsutils/
