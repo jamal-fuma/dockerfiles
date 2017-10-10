@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER Tonnerre LOMBARD <tonnerre@ancient-solutions.com>
 
 RUN apk update && apk add gitolite openssh openssh-client
